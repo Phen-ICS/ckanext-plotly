@@ -127,7 +127,7 @@ class PlotlyExplorerPlugin(plugins.SingletonPlugin):
         return {
             u'name': u'plotly_explorer',
             u'title': u'Chart Explorer',
-            u'icon': u'bar-chart-o',
+            u'icon': u'chart-simple',
             u'requires_datastore': True,
             u'preview_enabled': False,
             u'full_page_edit': False,
