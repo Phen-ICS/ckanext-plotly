@@ -48,7 +48,6 @@ To temporary patch the CKAN configuration for the duration of a test you can use
         pass
 """
 
-
 import pytest
 
 from ckan.plugins.toolkit import get_validator, Invalid
