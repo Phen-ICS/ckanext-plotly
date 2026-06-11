@@ -30,7 +30,7 @@ cache:
 
 # Default Python image and bootstrap
 default:
-  image: python:3.10-alpine
+  image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/python:3.10-alpine
   tags:
     - ics-docker
   before_script:
