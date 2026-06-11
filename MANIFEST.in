@@ -2,3 +2,4 @@ include README.rst
 include LICENSE
 include requirements.txt
 recursive-include ckanext/plotly *.html *.json *.js *.less *.css *.mo *.yml *.yaml
+recursive-include ckanext/plotly/tests *.py *.ini
