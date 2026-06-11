@@ -43,7 +43,7 @@ class PlotlyPlugin(plugins.SingletonPlugin):
             "schema": {
                 "plotly_config": [
                     toolkit.get_validator("ignore_missing"),
-                    toolkit.get_validator("valid_plotly_json"),
+                    valid_plotly,
                 ]
             },
         }

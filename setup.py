@@ -15,7 +15,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version="0.0.2",
+    version="0.0.2.2",
     description="""Plotly based charting for CKAN datastore data""",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -56,7 +56,9 @@ setup(
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
     include_package_data=True,
-    package_data={},
+    package_data={
+        "ckanext.plotly.tests": ["test.ini"],
+    },
     # Although 'package_data' is the preferred approach, in some case you may
     # need to place data files outside of your packages.
     # see http://docs.python.org/3.4/distutils/setupscript.html
