@@ -78,7 +78,7 @@ build:package:
     paths:
       - dist/
 
-# Publish python package to our gitlab PyPI (manual)
+# Publish python package to our gitlab PyPI (automatic)
 publish:pypi:
   stage: publish
   image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/python:3.10-slim
@@ -92,9 +92,9 @@ publish:pypi:
     - python -m pip install --upgrade pip setuptools wheel twine
   rules:
     - if: $CI_COMMIT_TAG
-      when: manual
+      when: on_success
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: manual
+      when: on_success
     - when: never
   script:
     - test -d dist && ls -l dist
@@ -114,7 +114,7 @@ publish:pypi:preview:
     - python3 -m pip install --upgrade pip setuptools wheel build twine
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      when: manual
+      when: on_success
     - when: never
   script:
     - rm -rf dist/
@@ -157,7 +157,7 @@ trigger:fair3r-docker-alt:integration:
     - job: publish:pypi:preview
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      when: manual
+      when: on_success
     - when: never
   variables:
     PLOTLY_PLUGIN_REF: $CI_COMMIT_REF_NAME
@@ -176,7 +176,7 @@ cleanup:pypi:preview:
     - job: trigger:fair3r-docker-alt:integration
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-      when: manual
+      when: on_success
     - when: never
   script:
     - |
