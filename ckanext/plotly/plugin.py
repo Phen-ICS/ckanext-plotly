@@ -1,10 +1,7 @@
-import ckan.plugins as plugins
-import ckan.plugins.toolkit as toolkit
-
-
-from six.moves.urllib.parse import urlencode
-
+from ckan import plugins
 from ckan.common import json
+from ckan.plugins import toolkit
+from six.moves.urllib.parse import urlencode
 
 
 class PlotlyPlugin(plugins.SingletonPlugin):
@@ -63,7 +60,7 @@ class PlotlyPlugin(plugins.SingletonPlugin):
         plotly_config = json.loads(plotly_json)
 
         for t in plotly_config.get("traces", []):
-            for k in t.keys():
+            for k in t:
                 if k.endswith("src") and t[k] not in fields:
                     fields.append(t[k])
 
@@ -88,8 +85,7 @@ def valid_plotly(value):
 
     except json.JSONDecodeError as e:
         raise toolkit.Invalid(
-            "Invalid JSON string near line %d column %d, %s"
-            % (e.lineno, e.colno, e.msg)
+            f"Invalid JSON string near line {e.lineno} column {e.colno}, {e.msg}"
         )
 
     if not isinstance(config, dict):

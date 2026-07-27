@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
 # Always prefer setuptools over distutils
-from setuptools import setup, find_packages
 from codecs import open  # To use a consistent encoding
 from os import path
+
+from setuptools import find_packages, setup
 
 here = path.abspath(path.dirname(__file__))
 
@@ -15,7 +15,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version="0.0.2.3",
+    version="0.0.2.4",
     description="""Plotly based charting for CKAN datastore data""",
     long_description=long_description,
     long_description_content_type="text/markdown",
