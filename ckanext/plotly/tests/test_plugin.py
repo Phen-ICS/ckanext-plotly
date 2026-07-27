@@ -49,13 +49,12 @@ To temporary patch the CKAN configuration for the duration of a test you can use
 """
 
 import pytest
-
-from ckan.plugins.toolkit import get_validator, Invalid
+from ckan.plugins.toolkit import Invalid, get_validator
 
 
 @pytest.mark.ckan_config("ckan.plugins", "plotly")
 @pytest.mark.usefixtures("with_plugins")
-class TestPlotly(object):
+class TestPlotly:
     def test_plotly_validator_bad_traces(self):
         v = get_validator("valid_plotly_json")
         with pytest.raises(Invalid):
