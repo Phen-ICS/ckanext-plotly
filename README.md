@@ -27,9 +27,14 @@ To install ckanext-plotly:
 
      . /usr/lib/ckan/default/bin/activate
 
-2. Clone the source and install it on the virtualenv
+2. Install via pip:
 
-    git clone https://github.com/USEPA/ckanext-plotly.git
+    pip install ckanext-fair3r-plotly
+	pip install -r requirements.txt
+
+   Or, to install from source:
+
+    git clone <url-of-this-repository>
     cd ckanext-plotly
     pip install -e .
 	pip install -r requirements.txt
@@ -50,7 +55,7 @@ None at present
 To install ckanext-plotly for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/USEPA/ckanext-plotly.git
+    git clone <url-of-this-repository>
     cd ckanext-plotly
     python setup.py develop
     pip install -r dev-requirements.txt
