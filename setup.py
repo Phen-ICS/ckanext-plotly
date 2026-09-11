@@ -11,11 +11,11 @@ with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
-    name="""ckanext-plotly""",
+    name="""ckanext-fair3r-plotly""",
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version="0.0.2.4",
+    version="0.0.2.6",
     description="""Plotly based charting for CKAN datastore data""",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,6 +26,7 @@ setup(
     author_email="""dekraker.paul@epa.gov""",
     # Choose your license
     license="AGPL",
+    license_files=["LICENSE"],
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         # How mature is this project? Common values are
