@@ -4,6 +4,7 @@
 
 CKAN Chart viewer / builder built around [plotly.js](https://plotly.com/javascript/) and the Plotly [react-chart-editor](https://github.com/plotly/react-chart-editor)
 
+> This is a fork of [USEPA/ckanext-plotly](https://github.com/USEPA/ckanext-plotly), adapted for the [Fair3R](https://fair3r.fr) CKAN portal (CNRS/IGBMC).
 
 ## Requirements
 
