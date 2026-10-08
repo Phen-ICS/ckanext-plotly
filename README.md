@@ -85,9 +85,9 @@ the following manual process is has been employed. A customized build process wo
 
 ## Tests
 
-To run the tests, do:
-
-    pytest --ckan-ini=test.ini ckanext
+```shell
+docker exec -u ckan -it ckan-app pytest --ckan-ini=/plugins/ckanext-plotly/test.ini /plugins/ckanext-plotly/ckanext
+```
 
 
 ## Disclaimer
