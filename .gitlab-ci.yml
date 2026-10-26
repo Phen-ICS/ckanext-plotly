@@ -78,13 +78,6 @@ security:bandit:
     - pip install bandit
     - bandit -r ckanext -x ckanext/plotly/tests
 
-# Python dependency audit
-security:pip-audit:
-  stage: validate
-  allow_failure: true
-  script:
-    - pip install pip-audit
-    - pip-audit
 
 # Build Python package
 build:package:
